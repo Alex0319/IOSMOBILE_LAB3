@@ -12,13 +12,9 @@ class WeatherTableViewController: UITableViewController,WeatherDataProtocol{
     
     var weatherController:WeatherController? = nil
     
-    private func loadWeatherInfo(){
-        weatherController=WeatherController(tableViewDelegate: self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadWeatherInfo()
+        weatherController?.setTableViewDelegate(tableViewDelegate: self)
         refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(WeatherTableViewController.refreshNewWeatherInfo), for: UIControlEvents.valueChanged)
     }
@@ -41,18 +37,13 @@ class WeatherTableViewController: UITableViewController,WeatherDataProtocol{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return (weatherController?.getCountOfWeatherRecords())!
     }
     
@@ -65,6 +56,25 @@ class WeatherTableViewController: UITableViewController,WeatherDataProtocol{
         cell.lblCityName.text = weatherInfo!.cityName
         cell.lblTemperatureValue.text = weatherInfo!.cityTemperature
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == "ShowWeatherOnMap"){
+            guard let weatherDetailViewController = segue.destination as? WeatherViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedFilmCell = sender as? WeatherTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedFilmCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            weatherDetailViewController.weatherInfo = weatherController?.getCityWeatherInfo(index: indexPath.row)
+        }
     }
     
     func reloadAfter(){

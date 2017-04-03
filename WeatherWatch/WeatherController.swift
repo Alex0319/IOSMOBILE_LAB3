@@ -10,9 +10,9 @@ import Alamofire
 
 class WeatherController{
     private var weatherInfoArray = [WeatherInfo]()
-    private var tableViewDelegate:WeatherDataProtocol
-    
-    init(tableViewDelegate:WeatherDataProtocol){
+    private var tableViewDelegate:WeatherDataProtocol? = nil
+        
+    public func setTableViewDelegate(tableViewDelegate:WeatherDataProtocol){
         self.tableViewDelegate = tableViewDelegate
     }
     
@@ -20,7 +20,9 @@ class WeatherController{
         weatherInfoArray.removeAll(keepingCapacity: false)
         if let arrayCities=json["list"].array{
             for cityInfo in arrayCities{
-                weatherInfoArray.append(WeatherInfo(name: cityInfo["name"].string!, temp: cityInfo["main"]["temp_max"].int!))
+                if let weatherInfo = cityInfo["weather"].array{
+                    weatherInfoArray.append(WeatherInfo(name: cityInfo["name"].string!, latitude: cityInfo["coord"]["lat"].double!, longitude: cityInfo["coord"]["lon"].double!, temperature: cityInfo["main"]["temp_max"].int!, pressure: cityInfo["main"]["pressure"].int!, humidity: cityInfo["main"]["humidity"].int!, windSpeed: cityInfo["wind"]["speed"].double!, description: weatherInfo[0]["description"].string!))
+                }
             }
         }
     }
@@ -28,13 +30,17 @@ class WeatherController{
     public func getWeatherInfo(){
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 120
-        Alamofire.request("http://api.openweathermap.org/data/2.5/group?id=5128581,5368361,4140963,6167865,6173331,4219762,2643743,2950159,2935517,2988507,2995469,8015556,3117735,3128760,756135,703448,625144,524901,629634,627145&units=metric&APPID=294a261b98a24fcd3df8816a7658d44e").validate().responseJSON { response in
+        Alamofire.request("http://api.openweathermap.org/data/2.5/group?id=5128581,5368361,4140963,6167865,6173331,6545158,2643743,2643123,2950159,2935517,2988507,2995469,8015556,3117735,3128760,756135,703448,625144,524901,627145&lang=ru&units=metric&APPID=294a261b98a24fcd3df8816a7658d44e").validate().responseJSON { response in
             switch response.result{
             case .success(let value):
                 self.saveWeatherInfo(json: JSON(value))
-                self.tableViewDelegate.reloadAfter()
+                if(self.tableViewDelegate != nil){
+                    self.tableViewDelegate?.reloadAfter()
+                }
             case .failure(let error):
-                self.tableViewDelegate.showError(errorString: "Error. Check connection")
+                if(self.tableViewDelegate != nil){
+                    self.tableViewDelegate?.showError(errorString: "Ошибка. Проверьте подключение к Интернету")
+                }
             }
         }
     }

@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		50002589CDBEA77F19A57346 /* Pods_WeatherWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C78BD2E9FB8D88BF9D2C71A /* Pods_WeatherWatchUITests.framework */; };
-		7DC17A9812809201233A858C /* Pods_WeatherWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FD6117F266A3673C3278B7 /* Pods_WeatherWatch.framework */; };
+		7DC17A9812809201233A858C /* Pods_WeatherWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FD6117F266A3673C3278B7 /* Pods_WeatherWatch.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		8459288D1E914CC100DA40C4 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC12631E912E9F006717D8 /* GoogleMapsBase.framework */; };
+		8459288E1E914CDA00DA40C4 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC12651E912ED6006717D8 /* GoogleMapsCore.framework */; };
+		845928921E919A7D00DA40C4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845928911E919A7D00DA40C4 /* MainTabBarViewController.swift */; };
+		845928941E919B2500DA40C4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845928931E919B2500DA40C4 /* MapViewController.swift */; };
+		845928981E91A89D00DA40C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845928971E91A89D00DA40C4 /* TableViewController.swift */; };
+		8459289A1E92318600DA40C4 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845928991E92318600DA40C4 /* MarkerFactory.swift */; };
+		84A7CB6E1E927D2800FB246C /* CalculateDistancesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7CB6D1E927D2800FB246C /* CalculateDistancesService.swift */; };
 		84BF96B51E863AD7008CF67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF96B41E863AD7008CF67D /* AppDelegate.swift */; };
 		84BF96B71E863AD7008CF67D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF96B61E863AD7008CF67D /* WeatherViewController.swift */; };
 		84BF96BA1E863AD7008CF67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BF96B81E863AD7008CF67D /* Main.storyboard */; };
@@ -21,6 +28,7 @@
 		84BF96E71E8E88FC008CF67D /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF96E61E8E88FC008CF67D /* WeatherTableViewCell.swift */; };
 		84BF96E91E8E8A01008CF67D /* WeatherDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF96E81E8E8A01008CF67D /* WeatherDataProtocol.swift */; };
 		84BF96EB1E8E8B46008CF67D /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF96EA1E8E8B46008CF67D /* WeatherTableViewController.swift */; };
+		84CC12681E912ED6006717D8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CC12661E912ED6006717D8 /* GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,11 @@
 		332C0B9282BA39ABC9731392 /* Pods_WeatherWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		337AB85F30DA226376589437 /* Pods-WeatherWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWatch/Pods-WeatherWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		7A83CF4724CE5E95195D1999 /* Pods-WeatherWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWatchUITests/Pods-WeatherWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		845928911E919A7D00DA40C4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		845928931E919B2500DA40C4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		845928971E91A89D00DA40C4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		845928991E92318600DA40C4 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
+		84A7CB6D1E927D2800FB246C /* CalculateDistancesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateDistancesService.swift; sourceTree = "<group>"; };
 		84BF96B11E863AD7008CF67D /* WeatherWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BF96B41E863AD7008CF67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BF96B61E863AD7008CF67D /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +75,18 @@
 		84BF96E61E8E88FC008CF67D /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		84BF96E81E8E8A01008CF67D /* WeatherDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataProtocol.swift; sourceTree = "<group>"; };
 		84BF96EA1E8E8B46008CF67D /* WeatherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
+		84CC12451E9036FC006717D8 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		84CC12461E9036FC006717D8 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		84CC12471E9036FC006717D8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		84CC12481E9036FC006717D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84CC12491E9036FC006717D8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		84CC124A1E9036FC006717D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84CC124B1E9036FC006717D8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		84CC124C1E9036FC006717D8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84CC12561E903720006717D8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		84CC12631E912E9F006717D8 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		84CC12651E912ED6006717D8 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		84CC12661E912ED6006717D8 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		8C78BD2E9FB8D88BF9D2C71A /* Pods_WeatherWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0051CAB031DA576B3ADF991 /* Pods-WeatherWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWatch/Pods-WeatherWatch.release.xcconfig"; sourceTree = "<group>"; };
 		E1F91FBC89FD6BC7D28A7C15 /* Pods-WeatherWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherWatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherWatchUITests/Pods-WeatherWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8459288E1E914CDA00DA40C4 /* GoogleMapsCore.framework in Frameworks */,
+				8459288D1E914CC100DA40C4 /* GoogleMapsBase.framework in Frameworks */,
+				84CC12681E912ED6006717D8 /* GoogleMaps.framework in Frameworks */,
 				7DC17A9812809201233A858C /* Pods_WeatherWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +126,18 @@
 		2CF936BC704B29304828074E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84CC12651E912ED6006717D8 /* GoogleMapsCore.framework */,
+				84CC12661E912ED6006717D8 /* GoogleMaps.framework */,
+				84CC12631E912E9F006717D8 /* GoogleMapsBase.framework */,
+				84CC12561E903720006717D8 /* MapKit.framework */,
+				84CC12451E9036FC006717D8 /* CoreAudio.framework */,
+				84CC12461E9036FC006717D8 /* CoreAudioKit.framework */,
+				84CC12471E9036FC006717D8 /* CoreBluetooth.framework */,
+				84CC12481E9036FC006717D8 /* CoreData.framework */,
+				84CC12491E9036FC006717D8 /* CoreFoundation.framework */,
+				84CC124A1E9036FC006717D8 /* CoreGraphics.framework */,
+				84CC124B1E9036FC006717D8 /* CoreImage.framework */,
+				84CC124C1E9036FC006717D8 /* CoreLocation.framework */,
 				E9FD6117F266A3673C3278B7 /* Pods_WeatherWatch.framework */,
 				332C0B9282BA39ABC9731392 /* Pods_WeatherWatchTests.framework */,
 				8C78BD2E9FB8D88BF9D2C71A /* Pods_WeatherWatchUITests.framework */,
@@ -142,16 +182,21 @@
 			isa = PBXGroup;
 			children = (
 				84BF96B41E863AD7008CF67D /* AppDelegate.swift */,
-				84BF96B61E863AD7008CF67D /* WeatherViewController.swift */,
 				84BF96B81E863AD7008CF67D /* Main.storyboard */,
+				845928971E91A89D00DA40C4 /* TableViewController.swift */,
+				845928991E92318600DA40C4 /* MarkerFactory.swift */,
+				845928931E919B2500DA40C4 /* MapViewController.swift */,
+				845928911E919A7D00DA40C4 /* MainTabBarViewController.swift */,
 				84BF96BB1E863AD7008CF67D /* Assets.xcassets */,
 				84BF96BD1E863AD7008CF67D /* LaunchScreen.storyboard */,
 				84BF96C01E863AD7008CF67D /* Info.plist */,
-				84BF96E21E8E838F008CF67D /* WeatherController.swift */,
 				84BF96E41E8E884A008CF67D /* WeatherInfo.swift */,
-				84BF96E61E8E88FC008CF67D /* WeatherTableViewCell.swift */,
 				84BF96E81E8E8A01008CF67D /* WeatherDataProtocol.swift */,
+				84BF96E21E8E838F008CF67D /* WeatherController.swift */,
+				84BF96E61E8E88FC008CF67D /* WeatherTableViewCell.swift */,
 				84BF96EA1E8E8B46008CF67D /* WeatherTableViewController.swift */,
+				84BF96B61E863AD7008CF67D /* WeatherViewController.swift */,
+				84A7CB6D1E927D2800FB246C /* CalculateDistancesService.swift */,
 			);
 			path = WeatherWatch;
 			sourceTree = "<group>";
@@ -248,6 +293,7 @@
 				TargetAttributes = {
 					84BF96B01E863AD5008CF67D = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					84BF96C41E863AD8008CF67D = {
@@ -408,9 +454,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BF96EB1E8E8B46008CF67D /* WeatherTableViewController.swift in Sources */,
+				84A7CB6E1E927D2800FB246C /* CalculateDistancesService.swift in Sources */,
 				84BF96E71E8E88FC008CF67D /* WeatherTableViewCell.swift in Sources */,
 				84BF96E51E8E884A008CF67D /* WeatherInfo.swift in Sources */,
+				845928941E919B2500DA40C4 /* MapViewController.swift in Sources */,
+				8459289A1E92318600DA40C4 /* MarkerFactory.swift in Sources */,
+				845928921E919A7D00DA40C4 /* MainTabBarViewController.swift in Sources */,
 				84BF96E91E8E8A01008CF67D /* WeatherDataProtocol.swift in Sources */,
+				845928981E91A89D00DA40C4 /* TableViewController.swift in Sources */,
 				84BF96B71E863AD7008CF67D /* WeatherViewController.swift in Sources */,
 				84BF96B51E863AD7008CF67D /* AppDelegate.swift in Sources */,
 				84BF96E31E8E838F008CF67D /* WeatherController.swift in Sources */,
@@ -566,10 +617,19 @@
 			baseConfigurationReference = 337AB85F30DA226376589437 /* Pods-WeatherWatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = WeatherWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.WeatherWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -579,10 +639,18 @@
 			baseConfigurationReference = D0051CAB031DA576B3ADF991 /* Pods-WeatherWatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = WeatherWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.WeatherWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

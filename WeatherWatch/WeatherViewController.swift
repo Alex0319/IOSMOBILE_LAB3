@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, GMSMapViewDelegate {
 
+    @IBOutlet weak var mapViewWeather: GMSMapView!
+    var weatherInfo: WeatherInfo? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: (weatherInfo?.latitude)!, longitude: (weatherInfo?.longitude)!, zoom: 9)
+        mapViewWeather.camera = camera
+        MarkerFactory.addLocationMarker(mapViewWeather: mapViewWeather, weatherInfo: weatherInfo)
+        mapViewWeather.settings.scrollGestures = false
+        mapViewWeather.settings.zoomGestures = false
+        mapViewWeather.settings.rotateGestures = false
+        mapViewWeather.settings.tiltGestures = false
+        mapViewWeather.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        mapViewWeather.clear()
     }
 }
 

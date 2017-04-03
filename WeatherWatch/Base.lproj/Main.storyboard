@@ -13,7 +13,7 @@
         <!--WeatherController-->
         <scene sceneID="Bv9-rC-A5b">
             <objects>
-                <viewController title="WeatherController" id="jFR-F0-P2B" sceneMemberID="viewController">
+                <viewController title="WeatherController" id="jFR-F0-P2B" customClass="TableViewController" customModule="WeatherWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OcC-zI-WZj"/>
                         <viewControllerLayoutGuide type="bottom" id="GIq-Cw-XGR"/>
@@ -26,20 +26,16 @@
                                 <rect key="frame" x="0.0" y="8" width="320" height="519"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <connections>
-                                    <segue destination="X1l-z9-g4l" kind="embed" id="KDp-i8-JNm"/>
+                                    <segue destination="X1l-z9-g4l" kind="embed" identifier="ShowWeatherTable" id="KDp-i8-JNm"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GIq-Cw-XGR" firstAttribute="top" secondItem="Goo-Bu-tph" secondAttribute="bottom" constant="-8" id="8Tq-OY-Qdb"/>
-                            <constraint firstAttribute="trailing" secondItem="Goo-Bu-tph" secondAttribute="trailing" id="92G-Bq-gX6"/>
-                            <constraint firstItem="GIq-Cw-XGR" firstAttribute="top" secondItem="Goo-Bu-tph" secondAttribute="bottom" constant="-8" id="DGI-q3-VB0"/>
-                            <constraint firstItem="Goo-Bu-tph" firstAttribute="top" secondItem="OcC-zI-WZj" secondAttribute="bottom" constant="-56" id="Nkb-Hj-tzt"/>
-                            <constraint firstItem="Goo-Bu-tph" firstAttribute="leading" secondItem="P6B-tp-wa2" secondAttribute="leading" id="PFX-vu-nRt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Goo-Bu-tph" secondAttribute="trailing" constant="-16" id="fHh-7a-co1"/>
-                            <constraint firstItem="Goo-Bu-tph" firstAttribute="top" secondItem="OcC-zI-WZj" secondAttribute="bottom" constant="-56" id="nm9-S8-8ux"/>
-                            <constraint firstItem="Goo-Bu-tph" firstAttribute="leading" secondItem="P6B-tp-wa2" secondAttribute="leading" id="ph3-8r-hGg"/>
+                            <constraint firstItem="Goo-Bu-tph" firstAttribute="leading" secondItem="P6B-tp-wa2" secondAttribute="leading" id="dZG-SO-SOE"/>
+                            <constraint firstItem="Goo-Bu-tph" firstAttribute="top" secondItem="P6B-tp-wa2" secondAttribute="topMargin" constant="8" id="hNn-cr-dzm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Goo-Bu-tph" secondAttribute="bottom" constant="41" id="hoR-o0-ipx"/>
+                            <constraint firstAttribute="trailing" secondItem="Goo-Bu-tph" secondAttribute="trailing" id="sbh-4M-gxT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Погода" id="yGu-Z1-R6b"/>
@@ -51,7 +47,7 @@
         <!--MainTabBarController-->
         <scene sceneID="kDb-ga-DLf">
             <objects>
-                <tabBarController title="MainTabBarController" id="XkX-Vu-BUP" sceneMemberID="viewController">
+                <tabBarController title="MainTabBarController" id="XkX-Vu-BUP" customClass="MainTabBarViewController" customModule="WeatherWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="n62-ge-pYX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -69,7 +65,7 @@
         <!--Карта-->
         <scene sceneID="sxc-dA-Iwh">
             <objects>
-                <viewController id="Glx-ao-XTz" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Glx-ao-XTz" customClass="MapViewController" customModule="WeatherWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Tc-PX-wjZ"/>
                         <viewControllerLayoutGuide type="bottom" id="W92-qw-vfH"/>
@@ -77,15 +73,30 @@
                     <view key="view" contentMode="scaleToFill" id="FEW-Oi-0mc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sC1-FM-lli" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sC1-FM-lli" firstAttribute="leading" secondItem="FEW-Oi-0mc" secondAttribute="leading" id="AAZ-CQ-nl1"/>
+                            <constraint firstItem="sC1-FM-lli" firstAttribute="top" secondItem="FEW-Oi-0mc" secondAttribute="top" id="FSy-J3-zMq"/>
+                            <constraint firstAttribute="trailing" secondItem="sC1-FM-lli" secondAttribute="trailing" id="Sav-ZU-BXX"/>
+                            <constraint firstAttribute="bottom" secondItem="sC1-FM-lli" secondAttribute="bottom" id="yRw-29-nSY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Карта" id="3AN-IX-ov5">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="mapView" destination="sC1-FM-lli" id="jjD-W1-FH7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLF-NS-FEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31933" y="351"/>
+            <point key="canvasLocation" x="-31933.125" y="350.7042253521127"/>
         </scene>
         <!--Weather Table View Controller-->
         <scene sceneID="GT3-TX-4th">
@@ -100,14 +111,13 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hAt-Ad-u8j" id="4Wy-Mh-Zgv">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-87-zgy">
                                             <rect key="frame" x="223" y="9" width="73" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Gfr-r2-6Av"/>
-                                                <constraint firstAttribute="width" constant="73" id="zoA-q9-EaS"/>
+                                                <constraint firstAttribute="width" constant="73" id="1SP-HL-mKM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -121,16 +131,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hLE-99-uFl" firstAttribute="leading" secondItem="4Wy-Mh-Zgv" secondAttribute="leadingMargin" constant="29" id="G3M-0V-jIO"/>
-                                        <constraint firstItem="Jv4-87-zgy" firstAttribute="trailing" secondItem="4Wy-Mh-Zgv" secondAttribute="trailingMargin" constant="-16" id="eOT-ml-wQL"/>
-                                        <constraint firstItem="hLE-99-uFl" firstAttribute="top" secondItem="4Wy-Mh-Zgv" secondAttribute="topMargin" constant="4" id="oEZ-pA-tmO"/>
-                                        <constraint firstItem="Jv4-87-zgy" firstAttribute="top" secondItem="4Wy-Mh-Zgv" secondAttribute="topMargin" constant="1" id="wXB-ib-dYy"/>
+                                        <constraint firstItem="hLE-99-uFl" firstAttribute="top" secondItem="4Wy-Mh-Zgv" secondAttribute="topMargin" constant="4" id="Nat-aT-r1A"/>
+                                        <constraint firstItem="Jv4-87-zgy" firstAttribute="top" secondItem="4Wy-Mh-Zgv" secondAttribute="topMargin" constant="1" id="eeX-qF-lBr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Jv4-87-zgy" secondAttribute="trailing" constant="16" id="l3h-er-9dW"/>
+                                        <constraint firstItem="hLE-99-uFl" firstAttribute="leading" secondItem="4Wy-Mh-Zgv" secondAttribute="leadingMargin" constant="29" id="luf-64-xUB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lblCityName" destination="hLE-99-uFl" id="fDz-BV-fWB"/>
                                     <outlet property="lblTemperatureValue" destination="Jv4-87-zgy" id="clz-fX-dWB"/>
-                                    <segue destination="WNu-qu-ccJ" kind="show" id="ICF-vl-pyz"/>
+                                    <segue destination="WNu-qu-ccJ" kind="show" identifier="ShowWeatherOnMap" id="ICF-vl-pyz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -158,13 +168,28 @@
                     <view key="view" contentMode="scaleToFill" id="xxZ-AI-aUf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v51-4Q-jHY" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="v51-4Q-jHY" secondAttribute="trailing" id="LoJ-SS-XZJ"/>
+                            <constraint firstItem="Bd9-ua-lgz" firstAttribute="top" secondItem="v51-4Q-jHY" secondAttribute="bottom" id="OZp-yc-32I"/>
+                            <constraint firstItem="v51-4Q-jHY" firstAttribute="top" secondItem="XNy-NM-gfj" secondAttribute="bottom" id="ijZ-cR-O1l"/>
+                            <constraint firstItem="v51-4Q-jHY" firstAttribute="leading" secondItem="xxZ-AI-aUf" secondAttribute="leading" id="nPE-JZ-P4O"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="mapViewWeather" destination="v51-4Q-jHY" id="HDR-Mx-rGc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xd0-z3-gB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29248" y="-483"/>
+            <point key="canvasLocation" x="-29248.125" y="-483.27464788732397"/>
         </scene>
         <!--Погода-->
         <scene sceneID="T8n-NB-LJW">
